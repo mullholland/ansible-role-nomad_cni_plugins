@@ -12,9 +12,9 @@ nomad_cni_plugins_download_url: "https://github.com/containernetworking/plugins/
 nomad_cni_plugins_install_path: "/opt/cni/bin"
 
 nomad_cni_plugins_sysctl_settings:
-  - setting: "net.bridge.bridge-nf-call-arptables"
+  - name: "net.bridge.bridge-nf-call-arptables"
     value: "1"
-  - setting: "net.bridge.bridge-nf-call-ip6tables"
+  - name: "net.bridge.bridge-nf-call-ip6tables"
     value: "1"
-  - setting: "net.bridge.bridge-nf-call-iptables"
+  - name: "net.bridge.bridge-nf-call-iptables"
     value: "1"

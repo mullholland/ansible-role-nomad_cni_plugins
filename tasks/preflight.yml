@@ -1,0 +1,14 @@
+---
+- name: Check if already installed
+  ansible.builtin.stat:
+    path: "{{ nomad_cni_plugins_install_path }}/version"
+  changed_when: false
+  check_mode: false
+  register: nomad_cni_plugins_is_installed
+
+- name: Check current version
+  ansible.builtin.command: "cat {{ nomad_cni_plugins_install_path }}/version"
+  changed_when: false
+  check_mode: false
+  register: nomad_cni_plugins_current_version
+  when: nomad_cni_plugins_is_installed.stat.exists

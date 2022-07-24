@@ -1,0 +1,16 @@
+---
+molecule_scenarios:
+  - scenario: "default"
+    ansible: ["previous", "current"]
+    platforms:
+      - "debian10"
+      - "debian11"
+      - "ubuntu1804"
+      - "ubuntu2004"
+      - "centos7"
+      - "centos-stream8"
+      - "fedora35"
+      - "fedora36"
+      - "amazonlinux"
+      - "rockylinux8"
+      - "almalinux8"

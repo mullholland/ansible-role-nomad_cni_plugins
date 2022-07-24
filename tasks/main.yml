@@ -1,0 +1,29 @@
+---
+- name: Include architecture variables
+  ansible.builtin.include_vars: 'arch.yml'
+
+- name: preflight checks
+  include_tasks: "preflight.yml"
+
+- name: debug
+  debug:
+    msg: "{{ nomad_cni_plugins_is_installed }}"
+
+- name: debug
+  debug:
+    msg: "{{ nomad_cni_plugins_current_version }}"
+
+- name: install
+  include_tasks: "install.yml"
+  when: not nomad_cni_plugins_is_installed.stat.exists or nomad_cni_plugins_version not in nomad_cni_plugins_current_version.stdout
+
+- name: update sysctl settings
+  ansible.posix.sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    state: "present"
+    reload: true
+  with_items: "{{ nomad_cni_plugins_sysctl_settings }}"
+  when:
+    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "containerd"

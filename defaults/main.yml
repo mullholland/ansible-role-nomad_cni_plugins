@@ -1,0 +1,20 @@
+---
+# https://www.nomadproject.io/docs/integrations/consul-connect#cni-plugins
+# Nomad uses CNI plugins to configure the network namespace used to secure
+# the Consul service mesh sidecar proxy. All Nomad client nodes using network
+# namespaces must have CNI plugins installed.
+
+nomad_cni_plugins_version: "1.1.1"
+
+# yamllint disable-line rule:line-length
+nomad_cni_plugins_download_url: "https://github.com/containernetworking/plugins/releases/download/v{{ nomad_cni_plugins_version }}/cni-plugins-linux-{{ nomad_cni_plugins_arch }}-v{{ nomad_cni_plugins_version }}.tgz"
+
+nomad_cni_plugins_install_path: "/opt/cni/bin"
+
+nomad_cni_plugins_sysctl_settings:
+  - setting: "net.bridge.bridge-nf-call-arptables"
+    value: "1"
+  - setting: "net.bridge.bridge-nf-call-ip6tables"
+    value: "1"
+  - setting: "net.bridge.bridge-nf-call-iptables"
+    value: "1"

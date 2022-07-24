@@ -64,7 +64,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/m
 -   [centos-stream8](https://hub.docker.com/r/mullholland/docker-molecule-centos-stream8)
 -   [fedora35](https://hub.docker.com/r/mullholland/docker-molecule-fedora35)
 -   [fedora36](https://hub.docker.com/r/mullholland/docker-molecule-fedora36)
--   [amazonlinux](https://hub.docker.com/r/mullholland/docker-molecule-amazonlinux)
 -   [rockylinux8](https://hub.docker.com/r/mullholland/docker-molecule-rockylinux8)
 -   [almalinux8](https://hub.docker.com/r/mullholland/docker-molecule-almalinux8)
 

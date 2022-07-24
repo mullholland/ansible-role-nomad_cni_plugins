@@ -11,6 +11,5 @@ molecule_scenarios:
       - "centos-stream8"
       - "fedora35"
       - "fedora36"
-      - "amazonlinux"
       - "rockylinux8"
       - "almalinux8"

@@ -1,5 +1,10 @@
 # [nomad_cni_plugins](#nomad_cni_plugins)
 
+**IMPORTANT**
+This role will no longer be updated.
+
+---
+
 |GitHub|GitLab|
 |------|------|
 |[![github](https://github.com/mullholland/ansible-role-nomad_cni_plugins/workflows/Ansible%20Molecule/badge.svg)](https://github.com/mullholland/ansible-role-nomad_cni_plugins/actions)|[![gitlab](https://gitlab.com/mullholland/ansible-role-nomad_cni_plugins/badges/main/pipeline.svg)](https://gitlab.com/mullholland/ansible-role-nomad_cni_plugins)|
